@@ -36,11 +36,7 @@ function provision_kubernetes_applications_k3s () {
 }
 
 function destroy_kubernetes_applications_k3s () {
-  if [ "${PROVISIONER_FORCE_DELETE_APPLICATIONS:-}" ]; then
-    run_provisioner_delete "${PROVISIONER_GATEWAY}" k3s_applications local
-  else
-    run_provisioner_destroy "${PROVISIONER_GATEWAY}" k3s_applications local
-  fi
+  run_provisioner_delete "${PROVISIONER_GATEWAY}" k3s_applications local
 }
 
 
